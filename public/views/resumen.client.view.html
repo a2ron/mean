@@ -1,0 +1,57 @@
+<section ng-init="find()">
+
+    <div class="row">
+        <div class="col-sm-4 col-xs-6">
+            <input type="date" class="form-control" ng-model="vm.ini"
+                   ng-change="find()"/>
+        </div>
+
+        <div class="col-sm-4 col-xs-6">
+            <a class="btn btn-success col-xs-5" href="#!/apuntes/crear">Añadir</a>
+
+            <button type="button" class="btn btn-primary col-xs-offset-2 col-xs-5" ng-click="vm.allIn()">
+                All in
+            </button>
+        </div>
+
+
+        <div class="col-sm-4 col-xs-6">
+            <input type="date" class="form-control" ng-model="vm.fin"
+                   ng-change="find()"/>
+        </div>
+    </div>
+    <br/>
+
+    <!--    <ng-layout src="views/list.client.view.html">
+        </ng-layout>-->
+
+    <div class="panel panel-default">
+        <div class="gridStyle" ng-grid="gridOptionsCategorias"></div>
+    </div>
+
+    <div ng-show="apuntesFilter.length">
+        <hr/>
+        <div class="gridStyle" ng-grid="gridOptionsApuntes"></div>
+    </div>
+
+    <hr/>
+
+    <!-- CHARTS -->
+    <nvd3 options="options" data="data" api="api"></nvd3>
+
+    <!-- CONTADORES -->
+    <div id="contadores" class="container-fluid">
+        <div class="contadores-wrapper row">
+
+            <button class="btn btn-primary col-md-3 col-xs-6 col-sm-3 " ng-model="verContadores" type="button"
+                    ng-click="toggleContadores()">
+                Ver/Ocultar Resumen
+            </button>
+
+            <button ng-show="verContadores" ng-repeat="(key, value) in summary"
+                    class="btn btn-primary col-md-3 col-xs-6 col-sm-3 " type="button">
+                {{key}} <span class="badge">  {{value| number:2}} </span> €
+            </button>
+        </div>
+    </div>
+</section>

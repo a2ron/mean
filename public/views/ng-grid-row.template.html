@@ -1,0 +1,10 @@
+<div ng-style="{ 'cursor': row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell {{col.cellClass}}">
+    <a ng-if="col.colDef.cellLinkPath" href="#!/{{col.colDef.cellLinkPath}}/{{row.entity._id}}">
+        <div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" >&nbsp;</div>
+        <div ng-cell></div>
+    </a>
+    <span ng-if="!col.colDef.cellLinkPath">
+        <div class="ngVerticalBar" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }">&nbsp;</div>
+        <div ng-cell></div>
+    </span>
+</div>
