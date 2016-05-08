@@ -1,0 +1,31 @@
+<ng-layout src="views/edit.client.view.html">
+
+    <div content_for="extra">
+        <br/>
+        <div class="panel panel-default">
+
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Título</th>
+                        <th>Descripción</th>
+                        <th>Importe</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="obj in apuntes">
+                        <th>           
+                            <a ng-href="#!/apuntes/{{obj._id}}">{{apuntes.length - $index}}</a>
+                        </th>
+                        <td> {{obj['titulo']}} </td>
+                        <td> {{obj['descripcion']}} </td>
+                        <td> {{obj['importe']}} </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</ng-layout>

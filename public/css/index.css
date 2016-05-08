@@ -1,0 +1,53 @@
+.clickable {
+    cursor: pointer;
+    cursor: hand;
+}
+
+tr.active td,
+tr.active th {
+    background-color: lightyellow !important;
+}
+
+.gridStyle {
+    border: 1px solid rgb(212, 212, 212);
+    /*min-height: 200px;*/
+}
+
+body {
+    padding-bottom: 50px;
+}
+
+.cellNumber {
+    text-align: right;
+}
+
+.ng-grid-cell-checkbox {
+    text-align: center;
+    padding: 7px !important;
+}
+
+.ng-grid-cell-button {
+    text-align: center;
+}
+
+.ng-grid-cell-button button, .ng-grid-cell-button button:focus, .ng-grid-cell-button button:active {
+    background: none;
+    border: none;
+    outline:none;
+}
+
+.contadores-wrapper button {
+    margin-top: 3px;
+    border-color: white;
+}
+
+@media (max-width: 420px) {
+    #contadores button {
+        font-size: 13px !important;
+    }
+
+    #menu a {
+        padding: 10px 5px;
+        font-size: 13px !important;
+    }
+}

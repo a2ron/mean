@@ -1,0 +1,5 @@
+node_modules
+public/lib
+.idea
+config/env/development.js
+config/env/production.js
